@@ -5,7 +5,19 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/', (req, res) => {});
+router.get('/', (req, res) => {
+  const queryText = `SELECT * FROM "name";`;
+
+  pool
+    .query(queryText)
+    .then((response) => {
+      res.send(response.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
 
 /**
  * POST route template
