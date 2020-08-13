@@ -4,13 +4,6 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 
-export default class DemoApp extends React.Component {
-  render() {
-    return (
-      <FullCalendar plugins={[dayGridPlugin]} initialView="dayGridMonth" />
-    );
-  }
-}
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
 // the component name TemplateClass with the name for the new
@@ -29,7 +22,7 @@ class SchedulePage extends Component {
       (item, index) => {
         return (
           <li key={index}>
-            {item.first_name} {item.last_name}
+            {item.pickup_id} {item.day_of_week}
           </li>
         );
       }
@@ -39,6 +32,23 @@ class SchedulePage extends Component {
         <h2>{this.state.heading}</h2>
         <ul>{scheduleDetails}</ul>
       </div>
+    );
+  }
+}
+// let events = [
+//   {
+//     title: 'My repeating event',
+//     start: '10:00', // a start time (10am in this example)
+//     end: '14:00', // an end time (2pm in this example)
+//     dow: [1, 4], // Repeat monday and thursday
+//   },
+//   console.log(events),
+// ];
+
+export default class DemoApp extends React.Component {
+  render() {
+    return (
+      <FullCalendar plugins={[dayGridPlugin]} initialView="dayGridMonth" />
     );
   }
 }

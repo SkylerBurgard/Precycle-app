@@ -1,9 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withStyles, createStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is, so it doesn't need 'connect()'
+const customStyles = (theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+      textAlign: 'left',
+      margin: `0 0 30px`,
+    },
+    title: {
+      flexGrow: 2,
+    },
+    primaryHdg: {
+      display: 'inline-block',
+      marginRight: '0.8rem',
+    },
+  });
+
 class SettingsPage extends Component {
   state = {
     firstName: '',
@@ -28,22 +47,31 @@ class SettingsPage extends Component {
     return (
       <div>
         <h1>Settings</h1>
+        <h3>Update pick up information</h3>
+        <h4>Address</h4>
         <form onSubmit={this.onSubmit}>
           <input
             type="text"
-            onChange={this.onFormChange('firstName')}
-            placeholder="Please enter First Name"
+            onChange={this.onFormChange('address')}
+            placeholder="Enter Address"
           />
+          <h4>City & State</h4>
           <input
             type="text"
-            onChange={this.onFormChange('lastName')}
-            placeholder="Please enter Last Name"
+            onChange={this.onFormChange('city & state')}
+            placeholder="Enter City & State"
           />
-          <button>Submit</button>
+          <h4>Pick up Day</h4>
+          <input
+            type="text"
+            onChange={this.onFormChange('Pick up day')}
+            placeholder="Day of Week"
+          />
+          <Button variant="contained">Submit</Button>
         </form>
       </div>
     );
   }
 }
 
-export default connect()(SettingsPage);
+export default withStyles(customStyles)(SettingsPage);

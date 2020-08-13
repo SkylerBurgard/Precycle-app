@@ -8,11 +8,10 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 // and then instead of `props.user.username` you could use `user.username`
 const UserPage = (props) => (
   <div>
-    <h1 id="welcome">
-      Welcome, { props.store.user.username }!
-    </h1>
+    <h1 id="welcome">Welcome, {props.store.user.username}!</h1>
     <p>Your ID is: {props.store.user.id}</p>
     <LogOutButton className="log-in" />
+    {/* <p>Your pick up day is:{props.store.schedule.id}</p> */}
   </div>
 );
 
