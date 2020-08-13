@@ -9,7 +9,13 @@ const AboutPage = () => (
   <div>
     <div>
       <p>
-        This about page is for anyone to read!
+        Precycle works with communities to waste less and recycle more. Based in
+        Kansas City, Missouri, we've created an app that makes getting
+        information about your waste and recycling program easy. By visiting
+        Precycle, you're joining users all over the city using our web app to
+        make recycling a little less complicated. If you or anyone you know have
+        additional ideas on how we can improve our app, we'd love to hear it!
+        Simply email us at precycle@precycle.com.
       </p>
     </div>
   </div>

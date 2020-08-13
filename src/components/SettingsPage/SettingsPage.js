@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // It doesn't have local state, so it can be a function component.
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is, so it doesn't need 'connect()'
-class InfoPage extends Component {
+class SettingsPage extends Component {
   state = {
     firstName: '',
     lastName: '',
@@ -27,7 +27,7 @@ class InfoPage extends Component {
   render() {
     return (
       <div>
-        <h1>Add Name</h1>
+        <h1>Settings</h1>
         <form onSubmit={this.onSubmit}>
           <input
             type="text"
@@ -46,4 +46,4 @@ class InfoPage extends Component {
   }
 }
 
-export default connect()(InfoPage);
+export default connect()(SettingsPage);

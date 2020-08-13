@@ -15,13 +15,13 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+import SettingsPage from '../SettingsPage/SettingsPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 
 import './App.css';
-import NamePage from '../NamePage/NamePage';
+import SchedulePage from '../SchedulePage/SchedulePage';
 
 class App extends Component {
   componentDidMount() {
@@ -46,8 +46,8 @@ class App extends Component {
             <ProtectedRoute exact path="/admin" component={UserPage} />
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the info page instead. */}
-            <ProtectedRoute exact path="/info" component={InfoPage} />
-            <ProtectedRoute exact path="/name" component={NamePage} />
+            <ProtectedRoute exact path="/settings" component={SettingsPage} />
+            <ProtectedRoute exact path="/schedule" component={SchedulePage} />
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will be redirected to the authRedirect path provided. */}
             <ProtectedRoute

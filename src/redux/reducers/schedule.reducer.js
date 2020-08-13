@@ -1,10 +1,10 @@
 const initialState = [];
 
-const nameReducer = (state = initialState, action) => {
+const scheduleReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'SET_NAME':
+    case 'SET_SCHEDULE':
       return action.payload;
-    case 'UNSET_NAME':
+    case 'UNSET_SCHEDULE':
       return initialState;
     default:
       return state;
@@ -13,4 +13,4 @@ const nameReducer = (state = initialState, action) => {
 
 // user will be on the redux state at:
 // state.user
-export default nameReducer;
+export default scheduleReducer;
