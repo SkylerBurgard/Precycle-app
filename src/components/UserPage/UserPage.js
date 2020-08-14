@@ -10,7 +10,7 @@ const UserPage = ({ user }) => (
   <div>
     <h1 id="welcome">Welcome, {user.username}!</h1>
     <h4> No collections today</h4>
-    <h3>Your collection day is: {user.groupId}</h3>
+    <h3>Your collection day is: {user.pickup_id}</h3>
     <p>Your ID is: {user.id}</p>
     <LogOutButton className="log-in" />
   </div>
