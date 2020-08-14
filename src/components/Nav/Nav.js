@@ -21,6 +21,9 @@ const Nav = (props) => {
       <Link to="/home">
         <h2 className="nav-title">Precycle</h2>
       </Link>
+      <Link color="primary" className="nav-link" to="/search">
+        {/* <input type="text" onChange="search" placeholder="Search" /> */}
+      </Link>
       <div className="nav-right">
         <Link className="nav-link" to={loginLinkData.path}>
           {/* Show this link if they are logged in or not,
@@ -31,19 +34,19 @@ const Nav = (props) => {
         {/* Show the link to the info page and the logout button if the user is logged in */}
         {props.store.user.id && (
           <>
+            <Link color="primary" className="nav-link" to="/schedule">
+              Schedule
+            </Link>
             <Link color="primary" className="nav-link" to="/settings">
               Settings
             </Link>
-            <Link color="primary" className="nav-link" to="/schedule">
-              Schedule
+            <Link color="primary" className="nav-link" to="/about">
+              About
             </Link>
             <LogOutButton className="nav-link" />
           </>
         )}
         {/* Always show this link since the about page is not protected */}
-        <Link color="primary" className="nav-link" to="/about">
-          About
-        </Link>
       </div>
     </div>
   );

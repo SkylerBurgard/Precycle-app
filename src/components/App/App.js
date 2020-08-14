@@ -19,6 +19,7 @@ import SettingsPage from '../SettingsPage/SettingsPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import SearchPage from '../SearchPage/SearchPage';
 
 import './App.css';
 import SchedulePage from '../SchedulePage/SchedulePage';
@@ -67,6 +68,12 @@ class App extends Component {
               path="/home"
               authRedirect="/admin"
               component={LandingPage}
+            />
+            <ProtectedRoute
+              exact
+              path="/search"
+              authRedirect="/admin"
+              component={SearchPage}
             />
 
             {/* If none of the other routes matched, we will show a 404. */}

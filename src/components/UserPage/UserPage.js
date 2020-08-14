@@ -6,12 +6,13 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
 // and then instead of `props.user.username` you could use `user.username`
-const UserPage = (props) => (
+const UserPage = ({ user }) => (
   <div>
-    <h1 id="welcome">Welcome, {props.store.user.username}!</h1>
-    <p>Your ID is: {props.store.user.id}</p>
+    <h1 id="welcome">Welcome, {user.username}!</h1>
+    <h4> No collections today</h4>
+    <h3>Your collection day is: {user.groupId}</h3>
+    <p>Your ID is: {user.id}</p>
     <LogOutButton className="log-in" />
-    {/* <p>Your pick up day is:{props.store.schedule.id}</p> */}
   </div>
 );
 
