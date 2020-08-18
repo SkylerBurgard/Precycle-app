@@ -46,14 +46,22 @@ class SearchPage extends Component {
   render() {
     return (
       <div>
-        <h1>Search</h1>
+        <body>
+          <script
+            async
+            src="https://cse.google.com/cse.js?cx=2587153da13b7fc56"
+          ></script>
+          <div class="gcse-search"></div>
+        </body>
+
+        <h1>Search commonly recycled items</h1>
         <form onSubmit={this.onSubmit}>
           <input
             type="text"
-            onChange={this.onFormChange('address')}
-            placeholder="Enter Address"
+            onChange={this.onFormChange('search')}
+            placeholder="Search"
           />
-          <h4>City & State</h4>
+          {/* <h4>City & State</h4>
           <input
             type="text"
             onChange={this.onFormChange('city & state')}
@@ -63,9 +71,9 @@ class SearchPage extends Component {
           <input
             type="text"
             onChange={this.onFormChange('Pick up day')}
-            placeholder="Day of Week"
-          />
-          <Button variant="contained">Submit</Button>
+            placeholder="Day of Week" */}
+
+          <Button variant="contained">search</Button>
         </form>
       </div>
     );

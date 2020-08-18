@@ -1,9 +1,9 @@
-const addressReducer = (state = {}, action) => {
+const settingsReducer = (state = [], action) => {
   switch (action.type) {
     case 'SET_ADDRESS':
       return action.payload;
     case 'UNSET_ADDRESS':
-      return {};
+      return [];
     default:
       return state;
   }
@@ -11,4 +11,4 @@ const addressReducer = (state = {}, action) => {
 
 // user will be on the redux state at:
 // state.user
-export default addressReducer;
+export default settingsReducer;

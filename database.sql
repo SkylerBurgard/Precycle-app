@@ -57,3 +57,19 @@ CREATE TABlE "user_address"
     "user_id" INTEGER REFERENCES "user_address" NOT NULL,
     "full_address" VARCHAR (180)
 );
+
+SELECT *
+FROM "city" JOIN "user" ON "city"."user_id" = "user".id;
+
+SELECT *
+FROM "city" JOIN "user" ON "city"."user_id" = "user".id;
+
+INSERT INTO "city"
+    ( "city_name", "state", "user_id")
+VALUES
+    ('Kansas City', 'Missouri', '3');
+
+INSERT INTO "street_address"
+    ("address_1", "address_2")
+VALUES
+    ('2005 joe lane Kearney, MO 64060', '');

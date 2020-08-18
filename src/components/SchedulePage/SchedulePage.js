@@ -24,12 +24,6 @@ class SchedulePage extends Component {
       startTime: '10:45:00',
       endTime: '12:45:00',
     },
-    {
-      groupId: 'greenEvents', // recurrent events in this group move together
-      daysOfWeek: ['5'],
-      startTime: '10:45:00',
-      endTime: '12:45:00',
-    },
   ];
 
   componentDidMount() {

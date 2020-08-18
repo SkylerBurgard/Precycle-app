@@ -13,7 +13,7 @@ function* fetchUser() {
     // allow the server session to recognize the user
     // If a user is logged in, this will return their information
     // from the server session (req.user)
-    const response = yield axios.get('/api/user', config);
+    const response = yield axios.get('api/user', config);
 
     // now that the session has given us a user object
     // with an id and username set the client-side user object to let
@@ -24,8 +24,19 @@ function* fetchUser() {
   }
 }
 
+function* fetchAddress(action) {
+  try {
+    const response = yield axios.get(`api/user/address/${action.payload}`);
+    yield put({ type: 'SET_ADDRESS', payload: response.data });
+    console.log(response);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
+  yield takeLatest('FETCH_ADDRESS', fetchAddress);
 }
 
 export default userSaga;
