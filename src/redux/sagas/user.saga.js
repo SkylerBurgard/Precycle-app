@@ -34,9 +34,20 @@ function* fetchAddress(action) {
   }
 }
 
+function* fetchPickups(action) {
+  try {
+    const response = yield axios.get(`api/user/pickups/${action.payload}`);
+    yield put({ type: 'SET_PICKUPS', payload: response.data });
+    console.log(response);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
   yield takeLatest('FETCH_ADDRESS', fetchAddress);
+  yield takeLatest('FETCH_PICKUPS', fetchPickups);
 }
 
 export default userSaga;
