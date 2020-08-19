@@ -13,13 +13,17 @@ class UserPage extends Component {
       type: 'FETCH_ADDRESS',
       payload: this.props.store.user.id,
     });
+    this.props.dispatch({
+      type: 'FETCH_PICKUPS',
+      payload: this.props.store.user.id,
+    });
   }
   render() {
     return (
       <div>
         <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
         {/* <h4> No collections today</h4> */}
-        <h3>Your collection day is: {this.props.store.user.pickup_id}</h3>
+        <h3>Your collection day is: {this.props.store.user.pickupsReducer}</h3>
         <p>Your ID is: {this.props.store.user.id}</p>
         <LogOutButton className="log-out" />
       </div>

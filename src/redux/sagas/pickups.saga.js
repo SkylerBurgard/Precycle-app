@@ -13,6 +13,11 @@ function* postPickups(action) {
     yield put({ type: 'REGISTRATION_FAILED' });
   }
 }
+function* fetchPickups(action) {
+  const response = yield axios.get('/api/pickups');
+  console.log(response);
+  yield put({ type: '', payload: response.data });
+}
 
 function* getPickups(action) {
   const response = yield axios.get('/api/pickups');
@@ -22,6 +27,7 @@ function* getPickups(action) {
 function* pickupsSaga() {
   yield takeLatest('POST_PICKUPS', postPickups);
   yield takeLatest('GET_PICKUPS', getPickups);
+  yield takeLatest('FETCH_PICKUPS', fetchPickups);
 }
 
 export default pickupsSaga;

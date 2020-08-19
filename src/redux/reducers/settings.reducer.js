@@ -1,9 +1,9 @@
-const settingsReducer = (state = [], action) => {
+const settingsReducer = (state = {}, action) => {
   switch (action.type) {
     case 'SET_ADDRESS':
       return action.payload;
     case 'UNSET_ADDRESS':
-      return [];
+      return {};
     default:
       return state;
   }
