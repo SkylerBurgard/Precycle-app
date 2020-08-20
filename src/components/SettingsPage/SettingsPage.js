@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withStyles, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -42,10 +43,13 @@ class SettingsPage extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     this.props.dispatch({ type: 'POST_NAME', payload: this.state });
+    this.props.history.push('/');
   };
+
   render() {
     return (
       <div>
+        <Paper variant="outlined" square />
         <h1>Settings</h1>
         <h3>Update pick up information</h3>
         <h4>Address</h4>
@@ -69,6 +73,7 @@ class SettingsPage extends Component {
           />
           <Button variant="contained">Submit</Button>
         </form>
+        <Paper variant="outlined" square />
       </div>
     );
   }

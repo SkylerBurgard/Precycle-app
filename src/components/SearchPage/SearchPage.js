@@ -116,12 +116,16 @@ function SearchPage() {
   };
 
   const trashItem = [
-    { id: 1, item: 'Plastic' },
-    { id: 2, item: 'Food' },
+    { id: 1, item: 'plastic' },
+    { id: 2, item: 'food' },
     { id: 3, item: 'batteries' },
     { id: 4, item: 'cardboard' },
     { id: 5, item: 'metal' },
     { id: 6, item: 'glass' },
+    { id: 7, item: 'paper' },
+    { id: 8, item: 'needles' },
+    { id: 9, item: 'garden hoses' },
+    { id: 10, item: 'propane tank' },
   ];
 
   function handleListKeyDown(event) {

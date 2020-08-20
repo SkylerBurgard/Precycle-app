@@ -21,16 +21,32 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/:id', (req, res) => {
+  const queryText = `SELECT * FROM "pickups" WHERE user_id=$1;`;
+
+  pool
+    .query(queryText, [req.params.id])
+    .then((response) => {
+      res.send(response.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
 // /**
 //  * POST route template
 //  */
-router.post('/', (req, res) => {
-  const queryText = `INSERT INTO "pickups" ("pickup_id", "groupId", "daysOfWeek", "startTime", "endTime") VALUES ($1, $2, $3, $4, $5);`;
+router.post('/new', (req, res) => {
+  const queryText = `INSERT INTO "pickups" 
+  ("groupId", "daysOfWeek", "startTime", "endTime", "user_id") 
+  VALUES ($1, $2, $3, $4, $5);`;
 
   const data = req.body;
 
   pool
-    .query(queryText, [data.groupId, data.daysOfWeek])
+    .query(queryText, [1, parseInt(data.day), '10:45:00', '12:45:00', data.id])
     .then((response) => {
       res.sendStatus(201);
     })
