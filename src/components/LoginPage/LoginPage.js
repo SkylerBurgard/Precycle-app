@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Slider } from 'react-slick';
+import { Paper, Box, Container } from '@material-ui/core';
 
 // const photo = [
 //   {
@@ -41,27 +42,31 @@ class LoginPage extends Component {
       //     {photo.map((photo) => {
       //       return (
       //         <div>
-      //           <img width="100%" src="{photo.url}" />
+      //           <img width="100%" src={photo.url} alt={photo.name} />
       //         </div>
       //       );
       //   })}
       // </Slider>
 
-      <div>
-        <LoginForm />
+      <Container>
+        <Paper>
+          <Box p={2} m={2}>
+            <LoginForm />
 
-        <center>
-          <Button
-            type="button"
-            className="link-button"
-            onClick={() => {
-              this.props.history.push('/registration');
-            }}
-          >
-            Register
-          </Button>
-        </center>
-      </div>
+            <center>
+              <Button
+                type="button"
+                className="link-button"
+                onClick={() => {
+                  this.props.history.push('/registration');
+                }}
+              >
+                Register
+              </Button>
+            </center>
+          </Box>
+        </Paper>
+      </Container>
     );
   }
 }

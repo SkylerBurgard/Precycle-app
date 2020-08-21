@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withStyles, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
+
+import { Paper, Box, Container } from '@material-ui/core';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -48,33 +49,39 @@ class SettingsPage extends Component {
 
   render() {
     return (
-      <div>
-        <Paper variant="outlined" square />
-        <h1>Settings</h1>
-        <h3>Update pick up information</h3>
-        <h4>Address</h4>
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            onChange={this.onFormChange('address')}
-            placeholder="Enter Address"
-          />
-          <h4>City & State</h4>
-          <input
-            type="text"
-            onChange={this.onFormChange('city & state')}
-            placeholder="Enter City & State"
-          />
-          <h4>Pick up Day</h4>
-          <input
-            type="text"
-            onChange={this.onFormChange('Pick up day')}
-            placeholder="Day of Week"
-          />
-          <Button variant="contained">Submit</Button>
-        </form>
-        <Paper variant="outlined" square />
-      </div>
+      <Container>
+        <Paper square>
+          <Box p={2}>
+            <div>
+              <Paper variant="outlined" square />
+              <h1>Settings</h1>
+              <h3>Update pick up information</h3>
+              <h4>Address</h4>
+              <form onSubmit={this.onSubmit}>
+                <input
+                  type="text"
+                  onChange={this.onFormChange('address')}
+                  placeholder="Enter Address"
+                />
+                <h4>City & State</h4>
+                <input
+                  type="text"
+                  onChange={this.onFormChange('city & state')}
+                  placeholder="Enter City & State"
+                />
+                <h4>Pick up Day</h4>
+                <input
+                  type="text"
+                  onChange={this.onFormChange('Pick up day')}
+                  placeholder="Day of Week"
+                />
+                <Button variant="contained">Submit</Button>
+              </form>
+              <Paper variant="outlined" square />
+            </div>
+          </Box>
+        </Paper>
+      </Container>
     );
   }
 }
